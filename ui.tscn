@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ivbcdke8m85o"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_x7ruy"]
+[ext_resource type="Texture2D" uid="uid://dv376dkpm5naj" path="res://GUI menus/Play buttun.png" id="2_edqcp"]
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_x7ruy")
+
+[node name="start_screen_play" type="Node2D" parent="."]
+
+[node name="Play_Button" type="Button" parent="start_screen_play"]
+modulate = Color(1, 0.827451, 1, 0)
+offset_left = 574.0
+offset_top = 317.0
+offset_right = 634.0
+offset_bottom = 369.0
+
+[node name="Play_button_sprite" type="Sprite2D" parent="start_screen_play"]
+position = Vector2(607.5, 353)
+scale = Vector2(1.55, 1.56)
+texture = ExtResource("2_edqcp")
+
+[connection signal="pressed" from="start_screen_play/Play_Button" to="." method="_on_play_button_pressed"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://djse6wng41rr4"]
+
+[ext_resource type="PackedScene" uid="uid://vne7qsjslkyr" path="res://player_scene.tscn" id="1_wknqg"]
+[ext_resource type="Texture2D" uid="uid://cbx7ukw4ya6tb" path="res://Stickman NPC.png" id="2_m87wx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u76x7"]
+size = Vector2(3241, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysoma"]
+size = Vector2(36, 829)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2ijd"]
+size = Vector2(27.75, 820)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnw3g"]
+size = Vector2(81, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb6rc"]
+size = Vector2(62, 109)
+
+[node name="world" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_wknqg")]
+position = Vector2(581, 524)
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="floor_hitbox" type="CollisionShape2D" parent="floor"]
+position = Vector2(305.5, 679)
+shape = SubResource("RectangleShape2D_u76x7")
+
+[node name="wall_left" type="StaticBody2D" parent="."]
+
+[node name="wall_left_hitbox" type="CollisionShape2D" parent="wall_left"]
+position = Vector2(-1252, 396)
+shape = SubResource("RectangleShape2D_ysoma")
+
+[node name="wall_right" type="StaticBody2D" parent="."]
+
+[node name="wall_right_hitbox" type="CollisionShape2D" parent="wall_right"]
+position = Vector2(1910, 405)
+shape = SubResource("RectangleShape2D_p2ijd")
+
+[node name="NPC_right" type="StaticBody2D" parent="."]
+
+[node name="wall_right_test" type="Sprite2D" parent="NPC_right"]
+position = Vector2(1854, 581.75)
+scale = Vector2(1.64, 1.46703)
+texture = ExtResource("2_m87wx")
+
+[node name="NPC_right_hitbox" type="CollisionShape2D" parent="NPC_right"]
+position = Vector2(1855.5, 582)
+shape = SubResource("RectangleShape2D_lnw3g")
+
+[node name="NPC_left" type="StaticBody2D" parent="."]
+
+[node name="wall_left_test" type="Sprite2D" parent="NPC_left"]
+position = Vector2(-856.5, 592.75)
+scale = Vector2(1.3, 1.22527)
+texture = ExtResource("2_m87wx")
+
+[node name="NPC_left_hitbox" type="CollisionShape2D" parent="NPC_left"]
+position = Vector2(-857, 591.5)
+shape = SubResource("RectangleShape2D_xb6rc")
